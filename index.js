@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 const NODE_PORT = process.env.REACT_APP_NODE_PORT || 3100;
 const REACT_HOST = process.env.REACT_APP_HOST || 'localhost';
 
-const host = "https://mosaiq.herokuapp.com/";
+const host = "https://pdf-tron.herokuapp.com";
 const port = process.env.PORT || 3000;
 
 const OPTIONS = {
