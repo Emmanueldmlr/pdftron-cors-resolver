@@ -3,18 +3,21 @@ const path = require('path');
 
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
-const PORT = process.env.PORT || 3000;
-const NODE_PORT = process.env.REACT_APP_NODE_PORT || 3100;
-const REACT_HOST = process.env.REACT_APP_HOST || 'localhost';
-
 const host = "https://pdf-tron.herokuapp.com";
 const port = process.env.PORT || 3000;
 
+
+const whitelist = [
+  "http://localhost:3000",
+  "https://mosaiqlabsdemo.netlify.app"
+];
+
 const OPTIONS = {
-  SERVER_ROOT: `${host}`,
-  PORT: port,
-  CORS_OPTIONS: { origin: `${host}:${PORT}`, credentials: true },
-  ALLOW_HTTP_PROXY: true,
+  SERVER_ROOT: host,
+  PORT: process.env.PORT || 8080,
+  CORS_OPTIONS: { origin: whitelist, credentials: true },
+  COOKIE_SETTING: { sameSite: 'none', secure: true },
+  ALLOW_HTTP_PROXY: false,
 };
 
 HTMLProxyServer.createServer(OPTIONS);
