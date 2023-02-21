@@ -1,0 +1,783 @@
+[debug] [2023-02-21T09:12:28.562Z] ----------------------------------------------------------------------
+[debug] [2023-02-21T09:12:28.563Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy --only functions
+[debug] [2023-02-21T09:12:28.563Z] CLI Version:   11.23.1
+[debug] [2023-02-21T09:12:28.563Z] Platform:      darwin
+[debug] [2023-02-21T09:12:28.563Z] Node Version:  v18.14.0
+[debug] [2023-02-21T09:12:28.564Z] Time:          Tue Feb 21 2023 10:12:28 GMT+0100 (West Africa Standard Time)
+[debug] [2023-02-21T09:12:28.564Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-02-21T09:12:28.599Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-02-21T09:12:28.599Z] > authorizing via signed-in user (d.bakare@mosaiqlabs.com)
+[debug] [2023-02-21T09:12:28.599Z] [iam] checking project pdftron-proxy-server for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-02-21T09:12:28.600Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions [none]
+[debug] [2023-02-21T09:12:28.600Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions x-goog-quota-user=projects/pdftron-proxy-server
+[debug] [2023-02-21T09:12:28.600Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-02-21T09:12:29.627Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions 200
+[debug] [2023-02-21T09:12:29.627Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-02-21T09:12:29.628Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/pdftron-proxy-server/serviceAccounts/pdftron-proxy-server@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-02-21T09:12:29.628Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/pdftron-proxy-server/serviceAccounts/pdftron-proxy-server@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-02-21T09:12:30.551Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/pdftron-proxy-server/serviceAccounts/pdftron-proxy-server@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-02-21T09:12:30.551Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/pdftron-proxy-server/serviceAccounts/pdftron-proxy-server@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'pdftron-proxy-server'...
+[info] 
+[info] i  deploying functions 
+[debug] [2023-02-21T09:12:30.553Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server [none]
+[debug] [2023-02-21T09:12:31.167Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server 200
+[debug] [2023-02-21T09:12:31.168Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server {"projectId":"pdftron-proxy-server","projectNumber":"90180485857","displayName":"pdftron-proxy-server","name":"projects/pdftron-proxy-server","resources":{"hostingSite":"pdftron-proxy-server"},"state":"ACTIVE","etag":"1_4e292ccf-820d-4dbf-92a9-87a9919e5422"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-02-21T09:12:31.169Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-02-21T09:12:31.169Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/pdftron-proxy-server
+[debug] [2023-02-21T09:12:31.170Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-02-21T09:12:31.171Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/pdftron-proxy-server
+[debug] [2023-02-21T09:12:31.171Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudbuild.googleapis.com [none]
+[debug] [2023-02-21T09:12:31.171Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudbuild.googleapis.com x-goog-quota-user=projects/pdftron-proxy-server
+[debug] [2023-02-21T09:12:31.172Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/artifactregistry.googleapis.com [none]
+[debug] [2023-02-21T09:12:31.172Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/artifactregistry.googleapis.com x-goog-quota-user=projects/pdftron-proxy-server
+[debug] [2023-02-21T09:12:32.366Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/runtimeconfig.googleapis.com 200
+[debug] [2023-02-21T09:12:32.366Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-02-21T09:12:32.370Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/artifactregistry.googleapis.com 200
+[debug] [2023-02-21T09:12:32.370Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-02-21T09:12:32.378Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudbuild.googleapis.com 200
+[debug] [2023-02-21T09:12:32.378Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-02-21T09:12:32.411Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudfunctions.googleapis.com 200
+[debug] [2023-02-21T09:12:32.411Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-02-21T09:12:32.412Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server/adminSdkConfig [none]
+[debug] [2023-02-21T09:12:33.011Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server/adminSdkConfig 200
+[debug] [2023-02-21T09:12:33.011Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server/adminSdkConfig {"projectId":"pdftron-proxy-server","storageBucket":"pdftron-proxy-server.appspot.com"}
+[debug] [2023-02-21T09:12:33.013Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pdftron-proxy-server/configs [none]
+[debug] [2023-02-21T09:12:33.614Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pdftron-proxy-server/configs 200
+[debug] [2023-02-21T09:12:33.614Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pdftron-proxy-server/configs {}
+[debug] [2023-02-21T09:12:33.616Z] Validating nodejs source
+[debug] [2023-02-21T09:12:34.270Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "nodemon ./index.js",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@drebakare/webviewer-html-proxy-server": "^1.0.0",
+    "@pdftron/webviewer-html-proxy-server": "^1.9.6",
+    "dotenv": "^16.0.3",
+    "firebase-admin": "^11.5.0",
+    "firebase-functions": "^4.2.0",
+    "nodemon": "^2.0.20"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.0.0"
+  },
+  "private": true
+}
+[debug] [2023-02-21T09:12:34.270Z] Building nodejs source
+[debug] [2023-02-21T09:12:34.270Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-02-21T09:12:34.276Z] Found firebase-functions binary at '/Applications/projects/open_source/pdftron/functions/node_modules/.bin/firebase-functions'
+[debug] [2023-02-21T09:12:35.735Z] Serving at port 8466
+
+[debug] [2023-02-21T09:12:36.206Z] [Feb 21, 2023, 01:12:36 AM] info: 	Running on localhost:8466
+
+[debug] [2023-02-21T09:12:36.583Z] FetchError: request to http://localhost:8466/__/quitquitquit failed, reason: connect ECONNREFUSED ::1:8466
+    at ClientRequest.<anonymous> (/usr/local/lib/node_modules/firebase-tools/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:513:28)
+    at ClientRequest.emit (node:domain:489:12)
+    at Socket.socketErrorListener (node:_http_client:502:9)
+    at Socket.emit (node:events:513:28)
+    at Socket.emit (node:domain:489:12)
+    at emitErrorNT (node:internal/streams/destroy:151:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-02-21T09:13:25.394Z] ----------------------------------------------------------------------
+[debug] [2023-02-21T09:13:25.395Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy --only functions
+[debug] [2023-02-21T09:13:25.395Z] CLI Version:   11.23.1
+[debug] [2023-02-21T09:13:25.396Z] Platform:      darwin
+[debug] [2023-02-21T09:13:25.396Z] Node Version:  v18.14.0
+[debug] [2023-02-21T09:13:25.396Z] Time:          Tue Feb 21 2023 10:13:25 GMT+0100 (West Africa Standard Time)
+[debug] [2023-02-21T09:13:25.397Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-02-21T09:13:25.433Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-02-21T09:13:25.433Z] > authorizing via signed-in user (d.bakare@mosaiqlabs.com)
+[debug] [2023-02-21T09:13:25.433Z] [iam] checking project pdftron-proxy-server for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-02-21T09:13:25.435Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions [none]
+[debug] [2023-02-21T09:13:25.435Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions x-goog-quota-user=projects/pdftron-proxy-server
+[debug] [2023-02-21T09:13:25.435Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-02-21T09:13:26.453Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions 200
+[debug] [2023-02-21T09:13:26.453Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-02-21T09:13:26.454Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/pdftron-proxy-server/serviceAccounts/pdftron-proxy-server@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-02-21T09:13:26.454Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/pdftron-proxy-server/serviceAccounts/pdftron-proxy-server@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-02-21T09:13:27.413Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/pdftron-proxy-server/serviceAccounts/pdftron-proxy-server@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-02-21T09:13:27.413Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/pdftron-proxy-server/serviceAccounts/pdftron-proxy-server@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'pdftron-proxy-server'...
+[info] 
+[info] i  deploying functions 
+[debug] [2023-02-21T09:13:27.417Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server [none]
+[debug] [2023-02-21T09:13:28.062Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server 200
+[debug] [2023-02-21T09:13:28.062Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server {"projectId":"pdftron-proxy-server","projectNumber":"90180485857","displayName":"pdftron-proxy-server","name":"projects/pdftron-proxy-server","resources":{"hostingSite":"pdftron-proxy-server"},"state":"ACTIVE","etag":"1_4e292ccf-820d-4dbf-92a9-87a9919e5422"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-02-21T09:13:28.064Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-02-21T09:13:28.064Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/pdftron-proxy-server
+[debug] [2023-02-21T09:13:28.065Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-02-21T09:13:28.065Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/pdftron-proxy-server
+[debug] [2023-02-21T09:13:28.065Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudbuild.googleapis.com [none]
+[debug] [2023-02-21T09:13:28.065Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudbuild.googleapis.com x-goog-quota-user=projects/pdftron-proxy-server
+[debug] [2023-02-21T09:13:28.066Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/artifactregistry.googleapis.com [none]
+[debug] [2023-02-21T09:13:28.066Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/artifactregistry.googleapis.com x-goog-quota-user=projects/pdftron-proxy-server
+[debug] [2023-02-21T09:13:29.265Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/runtimeconfig.googleapis.com 200
+[debug] [2023-02-21T09:13:29.265Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-02-21T09:13:29.266Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudbuild.googleapis.com 200
+[debug] [2023-02-21T09:13:29.266Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-02-21T09:13:29.267Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudfunctions.googleapis.com 200
+[debug] [2023-02-21T09:13:29.267Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-02-21T09:13:29.268Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/artifactregistry.googleapis.com 200
+[debug] [2023-02-21T09:13:29.268Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-02-21T09:13:29.268Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server/adminSdkConfig [none]
+[debug] [2023-02-21T09:13:29.993Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server/adminSdkConfig 200
+[debug] [2023-02-21T09:13:29.993Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server/adminSdkConfig {"projectId":"pdftron-proxy-server","storageBucket":"pdftron-proxy-server.appspot.com"}
+[debug] [2023-02-21T09:13:29.994Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pdftron-proxy-server/configs [none]
+[debug] [2023-02-21T09:13:30.667Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pdftron-proxy-server/configs 200
+[debug] [2023-02-21T09:13:30.668Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pdftron-proxy-server/configs {}
+[debug] [2023-02-21T09:13:30.669Z] Validating nodejs source
+[debug] [2023-02-21T09:13:31.252Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "nodemon ./index.js",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@drebakare/webviewer-html-proxy-server": "^1.0.0",
+    "@pdftron/webviewer-html-proxy-server": "^1.9.6",
+    "dotenv": "^16.0.3",
+    "firebase-admin": "^11.5.0",
+    "firebase-functions": "^4.2.0",
+    "nodemon": "^2.0.20"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.0.0"
+  },
+  "private": true
+}
+[debug] [2023-02-21T09:13:31.252Z] Building nodejs source
+[debug] [2023-02-21T09:13:31.252Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-02-21T09:13:31.258Z] Found firebase-functions binary at '/Applications/projects/open_source/pdftron/functions/node_modules/.bin/firebase-functions'
+[debug] [2023-02-21T09:13:31.362Z] Serving at port 8866
+
+[debug] [2023-02-21T09:13:31.775Z] [Feb 21, 2023, 01:13:31 AM] info: 	Running on localhost:8866
+
+[debug] [2023-02-21T09:13:32.174Z] FetchError: request to http://localhost:8866/__/quitquitquit failed, reason: connect ECONNREFUSED ::1:8866
+    at ClientRequest.<anonymous> (/usr/local/lib/node_modules/firebase-tools/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:513:28)
+    at ClientRequest.emit (node:domain:489:12)
+    at Socket.socketErrorListener (node:_http_client:502:9)
+    at Socket.emit (node:events:513:28)
+    at Socket.emit (node:domain:489:12)
+    at emitErrorNT (node:internal/streams/destroy:151:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-02-21T09:13:50.931Z] ----------------------------------------------------------------------
+[debug] [2023-02-21T09:13:50.932Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy --only functions
+[debug] [2023-02-21T09:13:50.932Z] CLI Version:   11.23.1
+[debug] [2023-02-21T09:13:50.932Z] Platform:      darwin
+[debug] [2023-02-21T09:13:50.932Z] Node Version:  v18.14.0
+[debug] [2023-02-21T09:13:50.933Z] Time:          Tue Feb 21 2023 10:13:50 GMT+0100 (West Africa Standard Time)
+[debug] [2023-02-21T09:13:50.933Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-02-21T09:13:50.969Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-02-21T09:13:50.969Z] > authorizing via signed-in user (d.bakare@mosaiqlabs.com)
+[debug] [2023-02-21T09:13:50.969Z] [iam] checking project pdftron-proxy-server for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-02-21T09:13:50.970Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions [none]
+[debug] [2023-02-21T09:13:50.971Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions x-goog-quota-user=projects/pdftron-proxy-server
+[debug] [2023-02-21T09:13:50.971Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-02-21T09:13:51.988Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions 200
+[debug] [2023-02-21T09:13:51.988Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-02-21T09:13:51.989Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/pdftron-proxy-server/serviceAccounts/pdftron-proxy-server@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-02-21T09:13:51.990Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/pdftron-proxy-server/serviceAccounts/pdftron-proxy-server@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-02-21T09:13:52.935Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/pdftron-proxy-server/serviceAccounts/pdftron-proxy-server@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-02-21T09:13:52.936Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/pdftron-proxy-server/serviceAccounts/pdftron-proxy-server@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'pdftron-proxy-server'...
+[info] 
+[info] i  deploying functions 
+[debug] [2023-02-21T09:13:52.948Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server [none]
+[debug] [2023-02-21T09:13:53.559Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server 200
+[debug] [2023-02-21T09:13:53.559Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server {"projectId":"pdftron-proxy-server","projectNumber":"90180485857","displayName":"pdftron-proxy-server","name":"projects/pdftron-proxy-server","resources":{"hostingSite":"pdftron-proxy-server"},"state":"ACTIVE","etag":"1_4e292ccf-820d-4dbf-92a9-87a9919e5422"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-02-21T09:13:53.561Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-02-21T09:13:53.561Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/pdftron-proxy-server
+[debug] [2023-02-21T09:13:53.562Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-02-21T09:13:53.562Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/pdftron-proxy-server
+[debug] [2023-02-21T09:13:53.562Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudbuild.googleapis.com [none]
+[debug] [2023-02-21T09:13:53.562Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudbuild.googleapis.com x-goog-quota-user=projects/pdftron-proxy-server
+[debug] [2023-02-21T09:13:53.563Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/artifactregistry.googleapis.com [none]
+[debug] [2023-02-21T09:13:53.563Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/artifactregistry.googleapis.com x-goog-quota-user=projects/pdftron-proxy-server
+[debug] [2023-02-21T09:13:54.757Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/artifactregistry.googleapis.com 200
+[debug] [2023-02-21T09:13:54.758Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-02-21T09:13:54.760Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/runtimeconfig.googleapis.com 200
+[debug] [2023-02-21T09:13:54.760Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-02-21T09:13:54.761Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudbuild.googleapis.com 200
+[debug] [2023-02-21T09:13:54.761Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-02-21T09:13:54.762Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudfunctions.googleapis.com 200
+[debug] [2023-02-21T09:13:54.762Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-02-21T09:13:54.763Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server/adminSdkConfig [none]
+[debug] [2023-02-21T09:13:55.389Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server/adminSdkConfig 200
+[debug] [2023-02-21T09:13:55.389Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server/adminSdkConfig {"projectId":"pdftron-proxy-server","storageBucket":"pdftron-proxy-server.appspot.com"}
+[debug] [2023-02-21T09:13:55.390Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pdftron-proxy-server/configs [none]
+[debug] [2023-02-21T09:13:56.099Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pdftron-proxy-server/configs 200
+[debug] [2023-02-21T09:13:56.100Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pdftron-proxy-server/configs {}
+[debug] [2023-02-21T09:13:56.101Z] Validating nodejs source
+[debug] [2023-02-21T09:13:56.692Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "nodemon ./index.js",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@drebakare/webviewer-html-proxy-server": "^1.0.0",
+    "@pdftron/webviewer-html-proxy-server": "^1.9.6",
+    "dotenv": "^16.0.3",
+    "firebase-admin": "^11.5.0",
+    "firebase-functions": "^4.2.0",
+    "nodemon": "^2.0.20"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.0.0"
+  },
+  "private": true
+}
+[debug] [2023-02-21T09:13:56.692Z] Building nodejs source
+[debug] [2023-02-21T09:13:56.692Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-02-21T09:13:56.698Z] Found firebase-functions binary at '/Applications/projects/open_source/pdftron/functions/node_modules/.bin/firebase-functions'
+[debug] [2023-02-21T09:13:56.795Z] Serving at port 8676
+
+[debug] [2023-02-21T09:13:57.181Z] [Feb 21, 2023, 01:13:57 AM] info: 	Running on localhost:8676
+
+[debug] [2023-02-21T09:13:57.565Z] FetchError: request to http://localhost:8676/__/quitquitquit failed, reason: connect ECONNREFUSED ::1:8676
+    at ClientRequest.<anonymous> (/usr/local/lib/node_modules/firebase-tools/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:513:28)
+    at ClientRequest.emit (node:domain:489:12)
+    at Socket.socketErrorListener (node:_http_client:502:9)
+    at Socket.emit (node:events:513:28)
+    at Socket.emit (node:domain:489:12)
+    at emitErrorNT (node:internal/streams/destroy:151:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-02-21T09:15:58.533Z] ----------------------------------------------------------------------
+[debug] [2023-02-21T09:15:58.534Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy --only functions
+[debug] [2023-02-21T09:15:58.534Z] CLI Version:   11.23.1
+[debug] [2023-02-21T09:15:58.534Z] Platform:      darwin
+[debug] [2023-02-21T09:15:58.534Z] Node Version:  v18.14.0
+[debug] [2023-02-21T09:15:58.535Z] Time:          Tue Feb 21 2023 10:15:58 GMT+0100 (West Africa Standard Time)
+[debug] [2023-02-21T09:15:58.535Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-02-21T09:15:58.571Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-02-21T09:15:58.572Z] > authorizing via signed-in user (d.bakare@mosaiqlabs.com)
+[debug] [2023-02-21T09:15:58.572Z] [iam] checking project pdftron-proxy-server for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-02-21T09:15:58.573Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions [none]
+[debug] [2023-02-21T09:15:58.573Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions x-goog-quota-user=projects/pdftron-proxy-server
+[debug] [2023-02-21T09:15:58.573Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-02-21T09:15:59.638Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions 200
+[debug] [2023-02-21T09:15:59.638Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-02-21T09:15:59.639Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/pdftron-proxy-server/serviceAccounts/pdftron-proxy-server@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-02-21T09:15:59.639Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/pdftron-proxy-server/serviceAccounts/pdftron-proxy-server@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-02-21T09:16:00.570Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/pdftron-proxy-server/serviceAccounts/pdftron-proxy-server@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-02-21T09:16:00.571Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/pdftron-proxy-server/serviceAccounts/pdftron-proxy-server@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'pdftron-proxy-server'...
+[info] 
+[info] i  deploying functions 
+[debug] [2023-02-21T09:16:00.573Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server [none]
+[debug] [2023-02-21T09:16:01.219Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server 200
+[debug] [2023-02-21T09:16:01.220Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server {"projectId":"pdftron-proxy-server","projectNumber":"90180485857","displayName":"pdftron-proxy-server","name":"projects/pdftron-proxy-server","resources":{"hostingSite":"pdftron-proxy-server"},"state":"ACTIVE","etag":"1_4e292ccf-820d-4dbf-92a9-87a9919e5422"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-02-21T09:16:01.221Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-02-21T09:16:01.221Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/pdftron-proxy-server
+[debug] [2023-02-21T09:16:01.222Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-02-21T09:16:01.222Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/pdftron-proxy-server
+[debug] [2023-02-21T09:16:01.222Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudbuild.googleapis.com [none]
+[debug] [2023-02-21T09:16:01.222Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudbuild.googleapis.com x-goog-quota-user=projects/pdftron-proxy-server
+[debug] [2023-02-21T09:16:01.223Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/artifactregistry.googleapis.com [none]
+[debug] [2023-02-21T09:16:01.223Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/artifactregistry.googleapis.com x-goog-quota-user=projects/pdftron-proxy-server
+[debug] [2023-02-21T09:16:02.458Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/runtimeconfig.googleapis.com 200
+[debug] [2023-02-21T09:16:02.459Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-02-21T09:16:02.472Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/artifactregistry.googleapis.com 200
+[debug] [2023-02-21T09:16:02.472Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-02-21T09:16:02.475Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudbuild.googleapis.com 200
+[debug] [2023-02-21T09:16:02.475Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-02-21T09:16:02.506Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudfunctions.googleapis.com 200
+[debug] [2023-02-21T09:16:02.507Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-02-21T09:16:02.507Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server/adminSdkConfig [none]
+[debug] [2023-02-21T09:16:03.158Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server/adminSdkConfig 200
+[debug] [2023-02-21T09:16:03.159Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server/adminSdkConfig {"projectId":"pdftron-proxy-server","storageBucket":"pdftron-proxy-server.appspot.com"}
+[debug] [2023-02-21T09:16:03.159Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pdftron-proxy-server/configs [none]
+[debug] [2023-02-21T09:16:03.810Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pdftron-proxy-server/configs 200
+[debug] [2023-02-21T09:16:03.810Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pdftron-proxy-server/configs {}
+[debug] [2023-02-21T09:16:03.812Z] Validating nodejs source
+[debug] [2023-02-21T09:16:04.388Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "nodemon ./index.js",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@drebakare/webviewer-html-proxy-server": "^1.0.0",
+    "@pdftron/webviewer-html-proxy-server": "^1.9.6",
+    "dotenv": "^16.0.3",
+    "firebase-admin": "^11.5.0",
+    "firebase-functions": "^4.2.0",
+    "nodemon": "^2.0.20"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.0.0"
+  },
+  "private": true
+}
+[debug] [2023-02-21T09:16:04.388Z] Building nodejs source
+[debug] [2023-02-21T09:16:04.388Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-02-21T09:16:04.394Z] Found firebase-functions binary at '/Applications/projects/open_source/pdftron/functions/node_modules/.bin/firebase-functions'
+[debug] [2023-02-21T09:16:04.490Z] Serving at port 8763
+
+[debug] [2023-02-21T09:16:04.985Z] [Feb 21, 2023, 01:16:04 AM] info: 	Running on localhost:8763
+
+[debug] [2023-02-21T09:16:05.351Z] FetchError: request to http://localhost:8763/__/quitquitquit failed, reason: connect ECONNREFUSED ::1:8763
+    at ClientRequest.<anonymous> (/usr/local/lib/node_modules/firebase-tools/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:513:28)
+    at ClientRequest.emit (node:domain:489:12)
+    at Socket.socketErrorListener (node:_http_client:502:9)
+    at Socket.emit (node:events:513:28)
+    at Socket.emit (node:domain:489:12)
+    at emitErrorNT (node:internal/streams/destroy:151:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-02-21T09:16:30.547Z] ----------------------------------------------------------------------
+[debug] [2023-02-21T09:16:30.548Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy --only functions
+[debug] [2023-02-21T09:16:30.549Z] CLI Version:   11.23.1
+[debug] [2023-02-21T09:16:30.549Z] Platform:      darwin
+[debug] [2023-02-21T09:16:30.549Z] Node Version:  v18.14.0
+[debug] [2023-02-21T09:16:30.549Z] Time:          Tue Feb 21 2023 10:16:30 GMT+0100 (West Africa Standard Time)
+[debug] [2023-02-21T09:16:30.550Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-02-21T09:16:30.587Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-02-21T09:16:30.587Z] > authorizing via signed-in user (d.bakare@mosaiqlabs.com)
+[debug] [2023-02-21T09:16:30.587Z] [iam] checking project pdftron-proxy-server for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-02-21T09:16:30.588Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions [none]
+[debug] [2023-02-21T09:16:30.588Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions x-goog-quota-user=projects/pdftron-proxy-server
+[debug] [2023-02-21T09:16:30.588Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-02-21T09:16:31.633Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions 200
+[debug] [2023-02-21T09:16:31.633Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-02-21T09:16:31.634Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/pdftron-proxy-server/serviceAccounts/pdftron-proxy-server@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-02-21T09:16:31.634Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/pdftron-proxy-server/serviceAccounts/pdftron-proxy-server@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-02-21T09:16:32.558Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/pdftron-proxy-server/serviceAccounts/pdftron-proxy-server@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-02-21T09:16:32.558Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/pdftron-proxy-server/serviceAccounts/pdftron-proxy-server@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'pdftron-proxy-server'...
+[info] 
+[info] i  deploying functions 
+[debug] [2023-02-21T09:16:32.561Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server [none]
+[debug] [2023-02-21T09:16:33.205Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server 200
+[debug] [2023-02-21T09:16:33.205Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server {"projectId":"pdftron-proxy-server","projectNumber":"90180485857","displayName":"pdftron-proxy-server","name":"projects/pdftron-proxy-server","resources":{"hostingSite":"pdftron-proxy-server"},"state":"ACTIVE","etag":"1_4e292ccf-820d-4dbf-92a9-87a9919e5422"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-02-21T09:16:33.207Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-02-21T09:16:33.207Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/pdftron-proxy-server
+[debug] [2023-02-21T09:16:33.208Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-02-21T09:16:33.208Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/pdftron-proxy-server
+[debug] [2023-02-21T09:16:33.209Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudbuild.googleapis.com [none]
+[debug] [2023-02-21T09:16:33.209Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudbuild.googleapis.com x-goog-quota-user=projects/pdftron-proxy-server
+[debug] [2023-02-21T09:16:33.210Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/artifactregistry.googleapis.com [none]
+[debug] [2023-02-21T09:16:33.210Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/artifactregistry.googleapis.com x-goog-quota-user=projects/pdftron-proxy-server
+[debug] [2023-02-21T09:16:34.486Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/runtimeconfig.googleapis.com 200
+[debug] [2023-02-21T09:16:34.487Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-02-21T09:16:34.489Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudbuild.googleapis.com 200
+[debug] [2023-02-21T09:16:34.489Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-02-21T09:16:34.490Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/artifactregistry.googleapis.com 200
+[debug] [2023-02-21T09:16:34.490Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-02-21T09:16:34.491Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudfunctions.googleapis.com 200
+[debug] [2023-02-21T09:16:34.491Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-02-21T09:16:34.491Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server/adminSdkConfig [none]
+[debug] [2023-02-21T09:16:35.113Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server/adminSdkConfig 200
+[debug] [2023-02-21T09:16:35.113Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server/adminSdkConfig {"projectId":"pdftron-proxy-server","storageBucket":"pdftron-proxy-server.appspot.com"}
+[debug] [2023-02-21T09:16:35.114Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pdftron-proxy-server/configs [none]
+[debug] [2023-02-21T09:16:35.837Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pdftron-proxy-server/configs 200
+[debug] [2023-02-21T09:16:35.838Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pdftron-proxy-server/configs {}
+[debug] [2023-02-21T09:16:35.839Z] Validating nodejs source
+[debug] [2023-02-21T09:16:36.375Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "nodemon ./index.js",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@drebakare/webviewer-html-proxy-server": "^1.0.0",
+    "@pdftron/webviewer-html-proxy-server": "^1.9.6",
+    "dotenv": "^16.0.3",
+    "firebase-admin": "^11.5.0",
+    "firebase-functions": "^4.2.0",
+    "nodemon": "^2.0.20"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.0.0"
+  },
+  "private": true
+}
+[debug] [2023-02-21T09:16:36.375Z] Building nodejs source
+[debug] [2023-02-21T09:16:36.376Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-02-21T09:16:36.381Z] Found firebase-functions binary at '/Applications/projects/open_source/pdftron/functions/node_modules/.bin/firebase-functions'
+[debug] [2023-02-21T09:16:36.474Z] Serving at port 8295
+
+[debug] [2023-02-21T09:16:36.865Z] [Feb 21, 2023, 01:16:36 AM] info: 	Running on localhost:3000
+
+[debug] [2023-02-21T09:16:37.359Z] FetchError: request to http://localhost:8295/__/quitquitquit failed, reason: connect ECONNREFUSED ::1:8295
+    at ClientRequest.<anonymous> (/usr/local/lib/node_modules/firebase-tools/node_modules/node-fetch/lib/index.js:1491:11)
+    at ClientRequest.emit (node:events:513:28)
+    at ClientRequest.emit (node:domain:489:12)
+    at Socket.socketErrorListener (node:_http_client:502:9)
+    at Socket.emit (node:events:513:28)
+    at Socket.emit (node:domain:489:12)
+    at emitErrorNT (node:internal/streams/destroy:151:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-02-21T09:17:00.082Z] ----------------------------------------------------------------------
+[debug] [2023-02-21T09:17:00.082Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy --only functions
+[debug] [2023-02-21T09:17:00.083Z] CLI Version:   11.23.1
+[debug] [2023-02-21T09:17:00.083Z] Platform:      darwin
+[debug] [2023-02-21T09:17:00.083Z] Node Version:  v18.14.0
+[debug] [2023-02-21T09:17:00.084Z] Time:          Tue Feb 21 2023 10:17:00 GMT+0100 (West Africa Standard Time)
+[debug] [2023-02-21T09:17:00.084Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-02-21T09:17:00.121Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-02-21T09:17:00.121Z] > authorizing via signed-in user (d.bakare@mosaiqlabs.com)
+[debug] [2023-02-21T09:17:00.121Z] [iam] checking project pdftron-proxy-server for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-02-21T09:17:00.122Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions [none]
+[debug] [2023-02-21T09:17:00.122Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions x-goog-quota-user=projects/pdftron-proxy-server
+[debug] [2023-02-21T09:17:00.123Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-02-21T09:17:01.153Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions 200
+[debug] [2023-02-21T09:17:01.153Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-02-21T09:17:01.154Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/pdftron-proxy-server/serviceAccounts/pdftron-proxy-server@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-02-21T09:17:01.154Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/pdftron-proxy-server/serviceAccounts/pdftron-proxy-server@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-02-21T09:17:01.716Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/pdftron-proxy-server/serviceAccounts/pdftron-proxy-server@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-02-21T09:17:01.717Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/pdftron-proxy-server/serviceAccounts/pdftron-proxy-server@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'pdftron-proxy-server'...
+[info] 
+[info] i  deploying functions 
+[debug] [2023-02-21T09:17:01.719Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server [none]
+[debug] [2023-02-21T09:17:02.337Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server 200
+[debug] [2023-02-21T09:17:02.337Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server {"projectId":"pdftron-proxy-server","projectNumber":"90180485857","displayName":"pdftron-proxy-server","name":"projects/pdftron-proxy-server","resources":{"hostingSite":"pdftron-proxy-server"},"state":"ACTIVE","etag":"1_4e292ccf-820d-4dbf-92a9-87a9919e5422"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-02-21T09:17:02.339Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-02-21T09:17:02.339Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/pdftron-proxy-server
+[debug] [2023-02-21T09:17:02.340Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-02-21T09:17:02.340Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/pdftron-proxy-server
+[debug] [2023-02-21T09:17:02.340Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudbuild.googleapis.com [none]
+[debug] [2023-02-21T09:17:02.340Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudbuild.googleapis.com x-goog-quota-user=projects/pdftron-proxy-server
+[debug] [2023-02-21T09:17:02.341Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/artifactregistry.googleapis.com [none]
+[debug] [2023-02-21T09:17:02.341Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/artifactregistry.googleapis.com x-goog-quota-user=projects/pdftron-proxy-server
+[debug] [2023-02-21T09:17:03.476Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/runtimeconfig.googleapis.com 200
+[debug] [2023-02-21T09:17:03.476Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-02-21T09:17:03.532Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/artifactregistry.googleapis.com 200
+[debug] [2023-02-21T09:17:03.532Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-02-21T09:17:03.532Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudbuild.googleapis.com 200
+[debug] [2023-02-21T09:17:03.532Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-02-21T09:17:03.546Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudfunctions.googleapis.com 200
+[debug] [2023-02-21T09:17:03.546Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/pdftron-proxy-server/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-02-21T09:17:03.546Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server/adminSdkConfig [none]
+[debug] [2023-02-21T09:17:04.151Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server/adminSdkConfig 200
+[debug] [2023-02-21T09:17:04.151Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server/adminSdkConfig {"projectId":"pdftron-proxy-server","storageBucket":"pdftron-proxy-server.appspot.com"}
+[debug] [2023-02-21T09:17:04.152Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pdftron-proxy-server/configs [none]
+[debug] [2023-02-21T09:17:04.742Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pdftron-proxy-server/configs 200
+[debug] [2023-02-21T09:17:04.742Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/pdftron-proxy-server/configs {}
+[debug] [2023-02-21T09:17:04.743Z] Validating nodejs source
+[debug] [2023-02-21T09:17:05.282Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "nodemon ./index.js",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@drebakare/webviewer-html-proxy-server": "^1.0.0",
+    "@pdftron/webviewer-html-proxy-server": "^1.9.6",
+    "dotenv": "^16.0.3",
+    "firebase-admin": "^11.5.0",
+    "firebase-functions": "^4.2.0",
+    "nodemon": "^2.0.20"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.0.0"
+  },
+  "private": true
+}
+[debug] [2023-02-21T09:17:05.282Z] Building nodejs source
+[debug] [2023-02-21T09:17:05.283Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-02-21T09:17:05.288Z] Found firebase-functions binary at '/Applications/projects/open_source/pdftron/functions/node_modules/.bin/firebase-functions'
+[debug] [2023-02-21T09:17:05.391Z] Serving at port 8432
+
+[debug] [2023-02-21T09:17:05.799Z] [Feb 21, 2023, 01:17:05 AM] info: 	Running on localhost:8080
+
+[debug] [2023-02-21T09:17:05.802Z] Got response from /__/functions.yaml {"endpoints":{"app":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"app"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2023-02-21T09:17:05.806Z] shutdown requested via /__/quitquitquit
+
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged /Applications/projects/open_source/pdftron/functions (56.47 KB) for uploading 
+[debug] [2023-02-21T09:17:15.846Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/pdftron-proxy-server/locations/-/functions [none]
+[debug] [2023-02-21T09:17:16.859Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/pdftron-proxy-server/locations/-/functions 200
+[debug] [2023-02-21T09:17:16.859Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/pdftron-proxy-server/locations/-/functions {}
+[debug] [2023-02-21T09:17:16.859Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/pdftron-proxy-server/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2023-02-21T09:17:18.224Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/pdftron-proxy-server/locations/-/functions 200
+[debug] [2023-02-21T09:17:18.224Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/pdftron-proxy-server/locations/-/functions {}
+[debug] [2023-02-21T09:17:18.230Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server [none]
+[debug] [2023-02-21T09:17:18.832Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server 200
+[debug] [2023-02-21T09:17:18.833Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/pdftron-proxy-server {"projectId":"pdftron-proxy-server","projectNumber":"90180485857","displayName":"pdftron-proxy-server","name":"projects/pdftron-proxy-server","resources":{"hostingSite":"pdftron-proxy-server"},"state":"ACTIVE","etag":"1_4e292ccf-820d-4dbf-92a9-87a9919e5422"}
+[debug] [2023-02-21T09:17:18.834Z] [functions] found 1 new HTTP functions, testing setIamPolicy permission...
+[debug] [2023-02-21T09:17:18.834Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions [none]
+[debug] [2023-02-21T09:17:18.834Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions x-goog-quota-user=projects/pdftron-proxy-server
+[debug] [2023-02-21T09:17:18.835Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2023-02-21T09:17:19.412Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions 200
+[debug] [2023-02-21T09:17:19.412Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pdftron-proxy-server:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2023-02-21T09:17:19.412Z] [functions] found setIamPolicy permission, proceeding with deploy
+[debug] [2023-02-21T09:17:19.414Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/pdftron-proxy-server/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2023-02-21T09:17:19.414Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/pdftron-proxy-server/locations/us-central1/functions:generateUploadUrl {}
+[debug] [2023-02-21T09:17:28.312Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/pdftron-proxy-server/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2023-02-21T09:17:28.313Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/pdftron-proxy-server/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/uploads-719005553171.us-central1.cloudfunctions.appspot.com/0bee9152-539d-4121-862b-c6dba42db455.zip?GoogleAccessId=service-90180485857@gcf-admin-robot.iam.gserviceaccount.com&Expires=1676972848&Signature=PgY%2Fd%2BrOTCGxLm1VafER1BfnqqBp6wPribMVPu0joPuB43MzesvvIZaMLXFpg5VTisfJxl0JWsDDA6LMQSgupVVMtU8IDwysNQtGgkiuScvsovomY23AIPj%2Flx45H96Je2FGcTyDRkmDt31g8slM9FmO0VWGiBOIr7YNM7OB2obw819DSgUnMWUNOMb0vA8moB4lyiNdmA9Pb4PNZVBX2hZFZcWy%2BKULhbxFggr5vtmc%2BMnldlqGZJK83kb9H0%2BhXMsR30fNeZupoJXjyi37zk7UzcXgWtwFCRhxJ5WzbZp1CE9jQG6GKVZylc1JTG9AMB%2BK4EevxZ%2FQDOiFme8P8g%3D%3D"}
+[debug] [2023-02-21T09:17:28.314Z] >>> [apiv2][query] PUT https://storage.googleapis.com/uploads-719005553171.us-central1.cloudfunctions.appspot.com/0bee9152-539d-4121-862b-c6dba42db455.zip GoogleAccessId=service-90180485857%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1676972848&Signature=PgY%2Fd%2BrOTCGxLm1VafER1BfnqqBp6wPribMVPu0joPuB43MzesvvIZaMLXFpg5VTisfJxl0JWsDDA6LMQSgupVVMtU8IDwysNQtGgkiuScvsovomY23AIPj%2Flx45H96Je2FGcTyDRkmDt31g8slM9FmO0VWGiBOIr7YNM7OB2obw819DSgUnMWUNOMb0vA8moB4lyiNdmA9Pb4PNZVBX2hZFZcWy%2BKULhbxFggr5vtmc%2BMnldlqGZJK83kb9H0%2BhXMsR30fNeZupoJXjyi37zk7UzcXgWtwFCRhxJ5WzbZp1CE9jQG6GKVZylc1JTG9AMB%2BK4EevxZ%2FQDOiFme8P8g%3D%3D
+[debug] [2023-02-21T09:17:28.314Z] >>> [apiv2][body] PUT https://storage.googleapis.com/uploads-719005553171.us-central1.cloudfunctions.appspot.com/0bee9152-539d-4121-862b-c6dba42db455.zip [stream]
+[debug] [2023-02-21T09:17:29.499Z] <<< [apiv2][status] PUT https://storage.googleapis.com/uploads-719005553171.us-central1.cloudfunctions.appspot.com/0bee9152-539d-4121-862b-c6dba42db455.zip 200
+[debug] [2023-02-21T09:17:29.499Z] <<< [apiv2][body] PUT https://storage.googleapis.com/uploads-719005553171.us-central1.cloudfunctions.appspot.com/0bee9152-539d-4121-862b-c6dba42db455.zip [omitted]
+[info] ✔  functions: functions folder uploaded successfully 
+[info] i  functions: creating Node.js 16 function app(us-central1)... 
+[debug] [2023-02-21T09:17:29.503Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/pdftron-proxy-server/locations/us-central1/functions [none]
+[debug] [2023-02-21T09:17:29.503Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/pdftron-proxy-server/locations/us-central1/functions {"name":"projects/pdftron-proxy-server/locations/us-central1/functions/app","sourceUploadUrl":"https://storage.googleapis.com/uploads-719005553171.us-central1.cloudfunctions.appspot.com/0bee9152-539d-4121-862b-c6dba42db455.zip?GoogleAccessId=service-90180485857@gcf-admin-robot.iam.gserviceaccount.com&Expires=1676972848&Signature=PgY%2Fd%2BrOTCGxLm1VafER1BfnqqBp6wPribMVPu0joPuB43MzesvvIZaMLXFpg5VTisfJxl0JWsDDA6LMQSgupVVMtU8IDwysNQtGgkiuScvsovomY23AIPj%2Flx45H96Je2FGcTyDRkmDt31g8slM9FmO0VWGiBOIr7YNM7OB2obw819DSgUnMWUNOMb0vA8moB4lyiNdmA9Pb4PNZVBX2hZFZcWy%2BKULhbxFggr5vtmc%2BMnldlqGZJK83kb9H0%2BhXMsR30fNeZupoJXjyi37zk7UzcXgWtwFCRhxJ5WzbZp1CE9jQG6GKVZylc1JTG9AMB%2BK4EevxZ%2FQDOiFme8P8g%3D%3D","entryPoint":"app","runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"90392da4719dca126e02752f5e8031379500baba"},"httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"minInstances":null,"maxInstances":null,"ingressSettings":null,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"pdftron-proxy-server\",\"storageBucket\":\"pdftron-proxy-server.appspot.com\"}","GCLOUD_PROJECT":"pdftron-proxy-server","EVENTARC_CLOUD_EVENT_SOURCE":"projects/pdftron-proxy-server/locations/us-central1/functions/app"},"serviceAccountEmail":null,"availableMemoryMb":null,"timeout":null,"vpcConnector":null,"vpcConnectorEgressSettings":null}
+[debug] [2023-02-21T09:17:30.493Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/pdftron-proxy-server/locations/us-central1/functions 200
+[debug] [2023-02-21T09:17:30.494Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/pdftron-proxy-server/locations/us-central1/functions {"name":"operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/pdftron-proxy-server/locations/us-central1/functions/app","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/pdftron-proxy-server/locations/us-central1/functions/app","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"app","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"90392da4719dca126e02752f5e8031379500baba"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-719005553171.us-central1.cloudfunctions.appspot.com/0bee9152-539d-4121-862b-c6dba42db455.zip?GoogleAccessId=service-90180485857@gcf-admin-robot.iam.gserviceaccount.com&Expires=1676972848&Signature=PgY%2Fd%2BrOTCGxLm1VafER1BfnqqBp6wPribMVPu0joPuB43MzesvvIZaMLXFpg5VTisfJxl0JWsDDA6LMQSgupVVMtU8IDwysNQtGgkiuScvsovomY23AIPj%2Flx45H96Je2FGcTyDRkmDt31g8slM9FmO0VWGiBOIr7YNM7OB2obw819DSgUnMWUNOMb0vA8moB4lyiNdmA9Pb4PNZVBX2hZFZcWy%2BKULhbxFggr5vtmc%2BMnldlqGZJK83kb9H0%2BhXMsR30fNeZupoJXjyi37zk7UzcXgWtwFCRhxJ5WzbZp1CE9jQG6GKVZylc1JTG9AMB%2BK4EevxZ%2FQDOiFme8P8g%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"pdftron-proxy-server\",\"storageBucket\":\"pdftron-proxy-server.appspot.com\"}","GCLOUD_PROJECT":"pdftron-proxy-server","EVENTARC_CLOUD_EVENT_SOURCE":"projects/pdftron-proxy-server/locations/us-central1/functions/app"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-02-21T09:17:30Z"}}
+[debug] [2023-02-21T09:17:30.495Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw [none]
+[debug] [2023-02-21T09:17:31.139Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw 200
+[debug] [2023-02-21T09:17:31.139Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw {"name":"operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/pdftron-proxy-server/locations/us-central1/functions/app","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/pdftron-proxy-server/locations/us-central1/functions/app","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"app","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"90392da4719dca126e02752f5e8031379500baba"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-719005553171.us-central1.cloudfunctions.appspot.com/0bee9152-539d-4121-862b-c6dba42db455.zip?GoogleAccessId=service-90180485857@gcf-admin-robot.iam.gserviceaccount.com&Expires=1676972848&Signature=PgY%2Fd%2BrOTCGxLm1VafER1BfnqqBp6wPribMVPu0joPuB43MzesvvIZaMLXFpg5VTisfJxl0JWsDDA6LMQSgupVVMtU8IDwysNQtGgkiuScvsovomY23AIPj%2Flx45H96Je2FGcTyDRkmDt31g8slM9FmO0VWGiBOIr7YNM7OB2obw819DSgUnMWUNOMb0vA8moB4lyiNdmA9Pb4PNZVBX2hZFZcWy%2BKULhbxFggr5vtmc%2BMnldlqGZJK83kb9H0%2BhXMsR30fNeZupoJXjyi37zk7UzcXgWtwFCRhxJ5WzbZp1CE9jQG6GKVZylc1JTG9AMB%2BK4EevxZ%2FQDOiFme8P8g%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"pdftron-proxy-server\",\"storageBucket\":\"pdftron-proxy-server.appspot.com\"}","GCLOUD_PROJECT":"pdftron-proxy-server","EVENTARC_CLOUD_EVENT_SOURCE":"projects/pdftron-proxy-server/locations/us-central1/functions/app"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-02-21T09:17:30Z"}}
+[debug] [2023-02-21T09:17:31.641Z] [create-default-us-central1-app] Retrying task index 0
+[debug] [2023-02-21T09:17:31.642Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw [none]
+[debug] [2023-02-21T09:17:32.246Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw 200
+[debug] [2023-02-21T09:17:32.246Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw {"name":"operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/pdftron-proxy-server/locations/us-central1/functions/app","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/pdftron-proxy-server/locations/us-central1/functions/app","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"app","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"90392da4719dca126e02752f5e8031379500baba"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-719005553171.us-central1.cloudfunctions.appspot.com/0bee9152-539d-4121-862b-c6dba42db455.zip?GoogleAccessId=service-90180485857@gcf-admin-robot.iam.gserviceaccount.com&Expires=1676972848&Signature=PgY%2Fd%2BrOTCGxLm1VafER1BfnqqBp6wPribMVPu0joPuB43MzesvvIZaMLXFpg5VTisfJxl0JWsDDA6LMQSgupVVMtU8IDwysNQtGgkiuScvsovomY23AIPj%2Flx45H96Je2FGcTyDRkmDt31g8slM9FmO0VWGiBOIr7YNM7OB2obw819DSgUnMWUNOMb0vA8moB4lyiNdmA9Pb4PNZVBX2hZFZcWy%2BKULhbxFggr5vtmc%2BMnldlqGZJK83kb9H0%2BhXMsR30fNeZupoJXjyi37zk7UzcXgWtwFCRhxJ5WzbZp1CE9jQG6GKVZylc1JTG9AMB%2BK4EevxZ%2FQDOiFme8P8g%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"pdftron-proxy-server\",\"storageBucket\":\"pdftron-proxy-server.appspot.com\"}","GCLOUD_PROJECT":"pdftron-proxy-server","EVENTARC_CLOUD_EVENT_SOURCE":"projects/pdftron-proxy-server/locations/us-central1/functions/app"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-02-21T09:17:30Z"}}
+[debug] [2023-02-21T09:17:33.248Z] [create-default-us-central1-app] Retrying task index 0
+[debug] [2023-02-21T09:17:33.248Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw [none]
+[debug] [2023-02-21T09:17:33.839Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw 200
+[debug] [2023-02-21T09:17:33.839Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw {"name":"operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/pdftron-proxy-server/locations/us-central1/functions/app","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/pdftron-proxy-server/locations/us-central1/functions/app","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"app","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"90392da4719dca126e02752f5e8031379500baba"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-719005553171.us-central1.cloudfunctions.appspot.com/0bee9152-539d-4121-862b-c6dba42db455.zip?GoogleAccessId=service-90180485857@gcf-admin-robot.iam.gserviceaccount.com&Expires=1676972848&Signature=PgY%2Fd%2BrOTCGxLm1VafER1BfnqqBp6wPribMVPu0joPuB43MzesvvIZaMLXFpg5VTisfJxl0JWsDDA6LMQSgupVVMtU8IDwysNQtGgkiuScvsovomY23AIPj%2Flx45H96Je2FGcTyDRkmDt31g8slM9FmO0VWGiBOIr7YNM7OB2obw819DSgUnMWUNOMb0vA8moB4lyiNdmA9Pb4PNZVBX2hZFZcWy%2BKULhbxFggr5vtmc%2BMnldlqGZJK83kb9H0%2BhXMsR30fNeZupoJXjyi37zk7UzcXgWtwFCRhxJ5WzbZp1CE9jQG6GKVZylc1JTG9AMB%2BK4EevxZ%2FQDOiFme8P8g%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"pdftron-proxy-server\",\"storageBucket\":\"pdftron-proxy-server.appspot.com\"}","GCLOUD_PROJECT":"pdftron-proxy-server","EVENTARC_CLOUD_EVENT_SOURCE":"projects/pdftron-proxy-server/locations/us-central1/functions/app"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-02-21T09:17:30Z"}}
+[debug] [2023-02-21T09:17:35.841Z] [create-default-us-central1-app] Retrying task index 0
+[debug] [2023-02-21T09:17:35.841Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw [none]
+[debug] [2023-02-21T09:17:36.458Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw 200
+[debug] [2023-02-21T09:17:36.458Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw {"name":"operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/pdftron-proxy-server/locations/us-central1/functions/app","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/pdftron-proxy-server/locations/us-central1/functions/app","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"app","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"90392da4719dca126e02752f5e8031379500baba"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-719005553171.us-central1.cloudfunctions.appspot.com/0bee9152-539d-4121-862b-c6dba42db455.zip?GoogleAccessId=service-90180485857@gcf-admin-robot.iam.gserviceaccount.com&Expires=1676972848&Signature=PgY%2Fd%2BrOTCGxLm1VafER1BfnqqBp6wPribMVPu0joPuB43MzesvvIZaMLXFpg5VTisfJxl0JWsDDA6LMQSgupVVMtU8IDwysNQtGgkiuScvsovomY23AIPj%2Flx45H96Je2FGcTyDRkmDt31g8slM9FmO0VWGiBOIr7YNM7OB2obw819DSgUnMWUNOMb0vA8moB4lyiNdmA9Pb4PNZVBX2hZFZcWy%2BKULhbxFggr5vtmc%2BMnldlqGZJK83kb9H0%2BhXMsR30fNeZupoJXjyi37zk7UzcXgWtwFCRhxJ5WzbZp1CE9jQG6GKVZylc1JTG9AMB%2BK4EevxZ%2FQDOiFme8P8g%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"pdftron-proxy-server\",\"storageBucket\":\"pdftron-proxy-server.appspot.com\"}","GCLOUD_PROJECT":"pdftron-proxy-server","EVENTARC_CLOUD_EVENT_SOURCE":"projects/pdftron-proxy-server/locations/us-central1/functions/app"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-02-21T09:17:30Z"}}
+[debug] [2023-02-21T09:17:40.459Z] [create-default-us-central1-app] Retrying task index 0
+[debug] [2023-02-21T09:17:40.460Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw [none]
+[debug] [2023-02-21T09:17:41.079Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw 200
+[debug] [2023-02-21T09:17:41.079Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw {"name":"operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/pdftron-proxy-server/locations/us-central1/functions/app","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/pdftron-proxy-server/locations/us-central1/functions/app","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"app","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"90392da4719dca126e02752f5e8031379500baba"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-719005553171.us-central1.cloudfunctions.appspot.com/0bee9152-539d-4121-862b-c6dba42db455.zip?GoogleAccessId=service-90180485857@gcf-admin-robot.iam.gserviceaccount.com&Expires=1676972848&Signature=PgY%2Fd%2BrOTCGxLm1VafER1BfnqqBp6wPribMVPu0joPuB43MzesvvIZaMLXFpg5VTisfJxl0JWsDDA6LMQSgupVVMtU8IDwysNQtGgkiuScvsovomY23AIPj%2Flx45H96Je2FGcTyDRkmDt31g8slM9FmO0VWGiBOIr7YNM7OB2obw819DSgUnMWUNOMb0vA8moB4lyiNdmA9Pb4PNZVBX2hZFZcWy%2BKULhbxFggr5vtmc%2BMnldlqGZJK83kb9H0%2BhXMsR30fNeZupoJXjyi37zk7UzcXgWtwFCRhxJ5WzbZp1CE9jQG6GKVZylc1JTG9AMB%2BK4EevxZ%2FQDOiFme8P8g%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"pdftron-proxy-server\",\"storageBucket\":\"pdftron-proxy-server.appspot.com\"}","GCLOUD_PROJECT":"pdftron-proxy-server","EVENTARC_CLOUD_EVENT_SOURCE":"projects/pdftron-proxy-server/locations/us-central1/functions/app"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-02-21T09:17:30Z"}}
+[debug] [2023-02-21T09:17:49.081Z] [create-default-us-central1-app] Retrying task index 0
+[debug] [2023-02-21T09:17:49.082Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw [none]
+[debug] [2023-02-21T09:17:49.769Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw 200
+[debug] [2023-02-21T09:17:49.769Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw {"name":"operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/pdftron-proxy-server/locations/us-central1/functions/app","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/pdftron-proxy-server/locations/us-central1/functions/app","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"app","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"90392da4719dca126e02752f5e8031379500baba"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-719005553171.us-central1.cloudfunctions.appspot.com/0bee9152-539d-4121-862b-c6dba42db455.zip?GoogleAccessId=service-90180485857@gcf-admin-robot.iam.gserviceaccount.com&Expires=1676972848&Signature=PgY%2Fd%2BrOTCGxLm1VafER1BfnqqBp6wPribMVPu0joPuB43MzesvvIZaMLXFpg5VTisfJxl0JWsDDA6LMQSgupVVMtU8IDwysNQtGgkiuScvsovomY23AIPj%2Flx45H96Je2FGcTyDRkmDt31g8slM9FmO0VWGiBOIr7YNM7OB2obw819DSgUnMWUNOMb0vA8moB4lyiNdmA9Pb4PNZVBX2hZFZcWy%2BKULhbxFggr5vtmc%2BMnldlqGZJK83kb9H0%2BhXMsR30fNeZupoJXjyi37zk7UzcXgWtwFCRhxJ5WzbZp1CE9jQG6GKVZylc1JTG9AMB%2BK4EevxZ%2FQDOiFme8P8g%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"pdftron-proxy-server\",\"storageBucket\":\"pdftron-proxy-server.appspot.com\"}","GCLOUD_PROJECT":"pdftron-proxy-server","EVENTARC_CLOUD_EVENT_SOURCE":"projects/pdftron-proxy-server/locations/us-central1/functions/app"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-02-21T09:17:30Z","buildId":"81756c34-d784-4d0a-8d5b-4d368dd17e13","buildName":"projects/90180485857/locations/us-central1/builds/81756c34-d784-4d0a-8d5b-4d368dd17e13"}}
+[debug] [2023-02-21T09:17:59.771Z] [create-default-us-central1-app] Retrying task index 0
+[debug] [2023-02-21T09:17:59.771Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw [none]
+[debug] [2023-02-21T09:18:00.382Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw 200
+[debug] [2023-02-21T09:18:00.382Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw {"name":"operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/pdftron-proxy-server/locations/us-central1/functions/app","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/pdftron-proxy-server/locations/us-central1/functions/app","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"app","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"90392da4719dca126e02752f5e8031379500baba"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-719005553171.us-central1.cloudfunctions.appspot.com/0bee9152-539d-4121-862b-c6dba42db455.zip?GoogleAccessId=service-90180485857@gcf-admin-robot.iam.gserviceaccount.com&Expires=1676972848&Signature=PgY%2Fd%2BrOTCGxLm1VafER1BfnqqBp6wPribMVPu0joPuB43MzesvvIZaMLXFpg5VTisfJxl0JWsDDA6LMQSgupVVMtU8IDwysNQtGgkiuScvsovomY23AIPj%2Flx45H96Je2FGcTyDRkmDt31g8slM9FmO0VWGiBOIr7YNM7OB2obw819DSgUnMWUNOMb0vA8moB4lyiNdmA9Pb4PNZVBX2hZFZcWy%2BKULhbxFggr5vtmc%2BMnldlqGZJK83kb9H0%2BhXMsR30fNeZupoJXjyi37zk7UzcXgWtwFCRhxJ5WzbZp1CE9jQG6GKVZylc1JTG9AMB%2BK4EevxZ%2FQDOiFme8P8g%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"pdftron-proxy-server\",\"storageBucket\":\"pdftron-proxy-server.appspot.com\"}","GCLOUD_PROJECT":"pdftron-proxy-server","EVENTARC_CLOUD_EVENT_SOURCE":"projects/pdftron-proxy-server/locations/us-central1/functions/app"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-02-21T09:17:30Z","buildId":"81756c34-d784-4d0a-8d5b-4d368dd17e13","buildName":"projects/90180485857/locations/us-central1/builds/81756c34-d784-4d0a-8d5b-4d368dd17e13"}}
+[debug] [2023-02-21T09:18:10.384Z] [create-default-us-central1-app] Retrying task index 0
+[debug] [2023-02-21T09:18:10.385Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw [none]
+[debug] [2023-02-21T09:18:11.019Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw 200
+[debug] [2023-02-21T09:18:11.019Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw {"name":"operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/pdftron-proxy-server/locations/us-central1/functions/app","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/pdftron-proxy-server/locations/us-central1/functions/app","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"app","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"90392da4719dca126e02752f5e8031379500baba"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-719005553171.us-central1.cloudfunctions.appspot.com/0bee9152-539d-4121-862b-c6dba42db455.zip?GoogleAccessId=service-90180485857@gcf-admin-robot.iam.gserviceaccount.com&Expires=1676972848&Signature=PgY%2Fd%2BrOTCGxLm1VafER1BfnqqBp6wPribMVPu0joPuB43MzesvvIZaMLXFpg5VTisfJxl0JWsDDA6LMQSgupVVMtU8IDwysNQtGgkiuScvsovomY23AIPj%2Flx45H96Je2FGcTyDRkmDt31g8slM9FmO0VWGiBOIr7YNM7OB2obw819DSgUnMWUNOMb0vA8moB4lyiNdmA9Pb4PNZVBX2hZFZcWy%2BKULhbxFggr5vtmc%2BMnldlqGZJK83kb9H0%2BhXMsR30fNeZupoJXjyi37zk7UzcXgWtwFCRhxJ5WzbZp1CE9jQG6GKVZylc1JTG9AMB%2BK4EevxZ%2FQDOiFme8P8g%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"pdftron-proxy-server\",\"storageBucket\":\"pdftron-proxy-server.appspot.com\"}","GCLOUD_PROJECT":"pdftron-proxy-server","EVENTARC_CLOUD_EVENT_SOURCE":"projects/pdftron-proxy-server/locations/us-central1/functions/app"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-02-21T09:17:30Z","buildId":"81756c34-d784-4d0a-8d5b-4d368dd17e13","buildName":"projects/90180485857/locations/us-central1/builds/81756c34-d784-4d0a-8d5b-4d368dd17e13"}}
+[debug] [2023-02-21T09:18:21.021Z] [create-default-us-central1-app] Retrying task index 0
+[debug] [2023-02-21T09:18:21.022Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw [none]
+[debug] [2023-02-21T09:18:21.664Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw 200
+[debug] [2023-02-21T09:18:21.664Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw {"name":"operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/pdftron-proxy-server/locations/us-central1/functions/app","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/pdftron-proxy-server/locations/us-central1/functions/app","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"app","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"90392da4719dca126e02752f5e8031379500baba"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-719005553171.us-central1.cloudfunctions.appspot.com/0bee9152-539d-4121-862b-c6dba42db455.zip?GoogleAccessId=service-90180485857@gcf-admin-robot.iam.gserviceaccount.com&Expires=1676972848&Signature=PgY%2Fd%2BrOTCGxLm1VafER1BfnqqBp6wPribMVPu0joPuB43MzesvvIZaMLXFpg5VTisfJxl0JWsDDA6LMQSgupVVMtU8IDwysNQtGgkiuScvsovomY23AIPj%2Flx45H96Je2FGcTyDRkmDt31g8slM9FmO0VWGiBOIr7YNM7OB2obw819DSgUnMWUNOMb0vA8moB4lyiNdmA9Pb4PNZVBX2hZFZcWy%2BKULhbxFggr5vtmc%2BMnldlqGZJK83kb9H0%2BhXMsR30fNeZupoJXjyi37zk7UzcXgWtwFCRhxJ5WzbZp1CE9jQG6GKVZylc1JTG9AMB%2BK4EevxZ%2FQDOiFme8P8g%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"pdftron-proxy-server\",\"storageBucket\":\"pdftron-proxy-server.appspot.com\"}","GCLOUD_PROJECT":"pdftron-proxy-server","EVENTARC_CLOUD_EVENT_SOURCE":"projects/pdftron-proxy-server/locations/us-central1/functions/app"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-02-21T09:17:30Z","buildId":"81756c34-d784-4d0a-8d5b-4d368dd17e13","buildName":"projects/90180485857/locations/us-central1/builds/81756c34-d784-4d0a-8d5b-4d368dd17e13"}}
+[debug] [2023-02-21T09:18:31.666Z] [create-default-us-central1-app] Retrying task index 0
+[debug] [2023-02-21T09:18:31.668Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw [none]
+[debug] [2023-02-21T09:18:32.272Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw 200
+[debug] [2023-02-21T09:18:32.272Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw {"name":"operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/pdftron-proxy-server/locations/us-central1/functions/app","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/pdftron-proxy-server/locations/us-central1/functions/app","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"app","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"90392da4719dca126e02752f5e8031379500baba"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-719005553171.us-central1.cloudfunctions.appspot.com/0bee9152-539d-4121-862b-c6dba42db455.zip?GoogleAccessId=service-90180485857@gcf-admin-robot.iam.gserviceaccount.com&Expires=1676972848&Signature=PgY%2Fd%2BrOTCGxLm1VafER1BfnqqBp6wPribMVPu0joPuB43MzesvvIZaMLXFpg5VTisfJxl0JWsDDA6LMQSgupVVMtU8IDwysNQtGgkiuScvsovomY23AIPj%2Flx45H96Je2FGcTyDRkmDt31g8slM9FmO0VWGiBOIr7YNM7OB2obw819DSgUnMWUNOMb0vA8moB4lyiNdmA9Pb4PNZVBX2hZFZcWy%2BKULhbxFggr5vtmc%2BMnldlqGZJK83kb9H0%2BhXMsR30fNeZupoJXjyi37zk7UzcXgWtwFCRhxJ5WzbZp1CE9jQG6GKVZylc1JTG9AMB%2BK4EevxZ%2FQDOiFme8P8g%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"pdftron-proxy-server\",\"storageBucket\":\"pdftron-proxy-server.appspot.com\"}","GCLOUD_PROJECT":"pdftron-proxy-server","EVENTARC_CLOUD_EVENT_SOURCE":"projects/pdftron-proxy-server/locations/us-central1/functions/app"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-02-21T09:17:30Z","buildId":"81756c34-d784-4d0a-8d5b-4d368dd17e13","buildName":"projects/90180485857/locations/us-central1/builds/81756c34-d784-4d0a-8d5b-4d368dd17e13"}}
+[debug] [2023-02-21T09:18:42.274Z] [create-default-us-central1-app] Retrying task index 0
+[debug] [2023-02-21T09:18:42.274Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw [none]
+[debug] [2023-02-21T09:18:42.890Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw 200
+[debug] [2023-02-21T09:18:42.890Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw {"name":"operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/pdftron-proxy-server/locations/us-central1/functions/app","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/pdftron-proxy-server/locations/us-central1/functions/app","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"app","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"90392da4719dca126e02752f5e8031379500baba"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-719005553171.us-central1.cloudfunctions.appspot.com/0bee9152-539d-4121-862b-c6dba42db455.zip?GoogleAccessId=service-90180485857@gcf-admin-robot.iam.gserviceaccount.com&Expires=1676972848&Signature=PgY%2Fd%2BrOTCGxLm1VafER1BfnqqBp6wPribMVPu0joPuB43MzesvvIZaMLXFpg5VTisfJxl0JWsDDA6LMQSgupVVMtU8IDwysNQtGgkiuScvsovomY23AIPj%2Flx45H96Je2FGcTyDRkmDt31g8slM9FmO0VWGiBOIr7YNM7OB2obw819DSgUnMWUNOMb0vA8moB4lyiNdmA9Pb4PNZVBX2hZFZcWy%2BKULhbxFggr5vtmc%2BMnldlqGZJK83kb9H0%2BhXMsR30fNeZupoJXjyi37zk7UzcXgWtwFCRhxJ5WzbZp1CE9jQG6GKVZylc1JTG9AMB%2BK4EevxZ%2FQDOiFme8P8g%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"pdftron-proxy-server\",\"storageBucket\":\"pdftron-proxy-server.appspot.com\"}","GCLOUD_PROJECT":"pdftron-proxy-server","EVENTARC_CLOUD_EVENT_SOURCE":"projects/pdftron-proxy-server/locations/us-central1/functions/app"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-02-21T09:17:30Z","buildId":"81756c34-d784-4d0a-8d5b-4d368dd17e13","buildName":"projects/90180485857/locations/us-central1/builds/81756c34-d784-4d0a-8d5b-4d368dd17e13"}}
+[debug] [2023-02-21T09:18:52.892Z] [create-default-us-central1-app] Retrying task index 0
+[debug] [2023-02-21T09:18:52.892Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw [none]
+[debug] [2023-02-21T09:18:53.499Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw 200
+[debug] [2023-02-21T09:18:53.499Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw {"name":"operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/pdftron-proxy-server/locations/us-central1/functions/app","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/pdftron-proxy-server/locations/us-central1/functions/app","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"app","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"90392da4719dca126e02752f5e8031379500baba"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-719005553171.us-central1.cloudfunctions.appspot.com/0bee9152-539d-4121-862b-c6dba42db455.zip?GoogleAccessId=service-90180485857@gcf-admin-robot.iam.gserviceaccount.com&Expires=1676972848&Signature=PgY%2Fd%2BrOTCGxLm1VafER1BfnqqBp6wPribMVPu0joPuB43MzesvvIZaMLXFpg5VTisfJxl0JWsDDA6LMQSgupVVMtU8IDwysNQtGgkiuScvsovomY23AIPj%2Flx45H96Je2FGcTyDRkmDt31g8slM9FmO0VWGiBOIr7YNM7OB2obw819DSgUnMWUNOMb0vA8moB4lyiNdmA9Pb4PNZVBX2hZFZcWy%2BKULhbxFggr5vtmc%2BMnldlqGZJK83kb9H0%2BhXMsR30fNeZupoJXjyi37zk7UzcXgWtwFCRhxJ5WzbZp1CE9jQG6GKVZylc1JTG9AMB%2BK4EevxZ%2FQDOiFme8P8g%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"pdftron-proxy-server\",\"storageBucket\":\"pdftron-proxy-server.appspot.com\"}","GCLOUD_PROJECT":"pdftron-proxy-server","EVENTARC_CLOUD_EVENT_SOURCE":"projects/pdftron-proxy-server/locations/us-central1/functions/app"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-02-21T09:17:30Z","buildId":"81756c34-d784-4d0a-8d5b-4d368dd17e13","buildName":"projects/90180485857/locations/us-central1/builds/81756c34-d784-4d0a-8d5b-4d368dd17e13"}}
+[debug] [2023-02-21T09:19:03.501Z] [create-default-us-central1-app] Retrying task index 0
+[debug] [2023-02-21T09:19:03.502Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw [none]
+[debug] [2023-02-21T09:19:04.125Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw 200
+[debug] [2023-02-21T09:19:04.126Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw {"name":"operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/pdftron-proxy-server/locations/us-central1/functions/app","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/pdftron-proxy-server/locations/us-central1/functions/app","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"app","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"90392da4719dca126e02752f5e8031379500baba"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-719005553171.us-central1.cloudfunctions.appspot.com/0bee9152-539d-4121-862b-c6dba42db455.zip?GoogleAccessId=service-90180485857@gcf-admin-robot.iam.gserviceaccount.com&Expires=1676972848&Signature=PgY%2Fd%2BrOTCGxLm1VafER1BfnqqBp6wPribMVPu0joPuB43MzesvvIZaMLXFpg5VTisfJxl0JWsDDA6LMQSgupVVMtU8IDwysNQtGgkiuScvsovomY23AIPj%2Flx45H96Je2FGcTyDRkmDt31g8slM9FmO0VWGiBOIr7YNM7OB2obw819DSgUnMWUNOMb0vA8moB4lyiNdmA9Pb4PNZVBX2hZFZcWy%2BKULhbxFggr5vtmc%2BMnldlqGZJK83kb9H0%2BhXMsR30fNeZupoJXjyi37zk7UzcXgWtwFCRhxJ5WzbZp1CE9jQG6GKVZylc1JTG9AMB%2BK4EevxZ%2FQDOiFme8P8g%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"pdftron-proxy-server\",\"storageBucket\":\"pdftron-proxy-server.appspot.com\"}","GCLOUD_PROJECT":"pdftron-proxy-server","EVENTARC_CLOUD_EVENT_SOURCE":"projects/pdftron-proxy-server/locations/us-central1/functions/app"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-02-21T09:17:30Z","buildId":"81756c34-d784-4d0a-8d5b-4d368dd17e13","buildName":"projects/90180485857/locations/us-central1/builds/81756c34-d784-4d0a-8d5b-4d368dd17e13"}}
+[debug] [2023-02-21T09:19:14.128Z] [create-default-us-central1-app] Retrying task index 0
+[debug] [2023-02-21T09:19:14.129Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw [none]
+[debug] [2023-02-21T09:19:14.712Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw 200
+[debug] [2023-02-21T09:19:14.712Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw {"name":"operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/pdftron-proxy-server/locations/us-central1/functions/app","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/pdftron-proxy-server/locations/us-central1/functions/app","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"app","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"90392da4719dca126e02752f5e8031379500baba"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-719005553171.us-central1.cloudfunctions.appspot.com/0bee9152-539d-4121-862b-c6dba42db455.zip?GoogleAccessId=service-90180485857@gcf-admin-robot.iam.gserviceaccount.com&Expires=1676972848&Signature=PgY%2Fd%2BrOTCGxLm1VafER1BfnqqBp6wPribMVPu0joPuB43MzesvvIZaMLXFpg5VTisfJxl0JWsDDA6LMQSgupVVMtU8IDwysNQtGgkiuScvsovomY23AIPj%2Flx45H96Je2FGcTyDRkmDt31g8slM9FmO0VWGiBOIr7YNM7OB2obw819DSgUnMWUNOMb0vA8moB4lyiNdmA9Pb4PNZVBX2hZFZcWy%2BKULhbxFggr5vtmc%2BMnldlqGZJK83kb9H0%2BhXMsR30fNeZupoJXjyi37zk7UzcXgWtwFCRhxJ5WzbZp1CE9jQG6GKVZylc1JTG9AMB%2BK4EevxZ%2FQDOiFme8P8g%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"pdftron-proxy-server\",\"storageBucket\":\"pdftron-proxy-server.appspot.com\"}","GCLOUD_PROJECT":"pdftron-proxy-server","EVENTARC_CLOUD_EVENT_SOURCE":"projects/pdftron-proxy-server/locations/us-central1/functions/app"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-02-21T09:17:30Z","buildId":"81756c34-d784-4d0a-8d5b-4d368dd17e13","buildName":"projects/90180485857/locations/us-central1/builds/81756c34-d784-4d0a-8d5b-4d368dd17e13"}}
+[debug] [2023-02-21T09:19:24.713Z] [create-default-us-central1-app] Retrying task index 0
+[debug] [2023-02-21T09:19:24.713Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw [none]
+[debug] [2023-02-21T09:19:25.336Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw 200
+[debug] [2023-02-21T09:19:25.336Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw {"name":"operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/pdftron-proxy-server/locations/us-central1/functions/app","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/pdftron-proxy-server/locations/us-central1/functions/app","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"app","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"90392da4719dca126e02752f5e8031379500baba"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-719005553171.us-central1.cloudfunctions.appspot.com/0bee9152-539d-4121-862b-c6dba42db455.zip?GoogleAccessId=service-90180485857@gcf-admin-robot.iam.gserviceaccount.com&Expires=1676972848&Signature=PgY%2Fd%2BrOTCGxLm1VafER1BfnqqBp6wPribMVPu0joPuB43MzesvvIZaMLXFpg5VTisfJxl0JWsDDA6LMQSgupVVMtU8IDwysNQtGgkiuScvsovomY23AIPj%2Flx45H96Je2FGcTyDRkmDt31g8slM9FmO0VWGiBOIr7YNM7OB2obw819DSgUnMWUNOMb0vA8moB4lyiNdmA9Pb4PNZVBX2hZFZcWy%2BKULhbxFggr5vtmc%2BMnldlqGZJK83kb9H0%2BhXMsR30fNeZupoJXjyi37zk7UzcXgWtwFCRhxJ5WzbZp1CE9jQG6GKVZylc1JTG9AMB%2BK4EevxZ%2FQDOiFme8P8g%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"pdftron-proxy-server\",\"storageBucket\":\"pdftron-proxy-server.appspot.com\"}","GCLOUD_PROJECT":"pdftron-proxy-server","EVENTARC_CLOUD_EVENT_SOURCE":"projects/pdftron-proxy-server/locations/us-central1/functions/app"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-02-21T09:17:30Z","buildId":"81756c34-d784-4d0a-8d5b-4d368dd17e13","sourceToken":"a0ed3825-e787-4879-bbcd-7949e7dba194","buildName":"projects/90180485857/locations/us-central1/builds/81756c34-d784-4d0a-8d5b-4d368dd17e13"}}
+[debug] [2023-02-21T09:19:25.337Z] Got source token a0ed3825-e787-4879-bbcd-7949e7dba194 for region us-central1
+[debug] [2023-02-21T09:19:35.338Z] [create-default-us-central1-app] Retrying task index 0
+[debug] [2023-02-21T09:19:35.339Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw [none]
+[debug] [2023-02-21T09:19:35.956Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw 200
+[debug] [2023-02-21T09:19:35.956Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw {"name":"operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/pdftron-proxy-server/locations/us-central1/functions/app","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/pdftron-proxy-server/locations/us-central1/functions/app","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"app","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"90392da4719dca126e02752f5e8031379500baba"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-719005553171.us-central1.cloudfunctions.appspot.com/0bee9152-539d-4121-862b-c6dba42db455.zip?GoogleAccessId=service-90180485857@gcf-admin-robot.iam.gserviceaccount.com&Expires=1676972848&Signature=PgY%2Fd%2BrOTCGxLm1VafER1BfnqqBp6wPribMVPu0joPuB43MzesvvIZaMLXFpg5VTisfJxl0JWsDDA6LMQSgupVVMtU8IDwysNQtGgkiuScvsovomY23AIPj%2Flx45H96Je2FGcTyDRkmDt31g8slM9FmO0VWGiBOIr7YNM7OB2obw819DSgUnMWUNOMb0vA8moB4lyiNdmA9Pb4PNZVBX2hZFZcWy%2BKULhbxFggr5vtmc%2BMnldlqGZJK83kb9H0%2BhXMsR30fNeZupoJXjyi37zk7UzcXgWtwFCRhxJ5WzbZp1CE9jQG6GKVZylc1JTG9AMB%2BK4EevxZ%2FQDOiFme8P8g%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"pdftron-proxy-server\",\"storageBucket\":\"pdftron-proxy-server.appspot.com\"}","GCLOUD_PROJECT":"pdftron-proxy-server","EVENTARC_CLOUD_EVENT_SOURCE":"projects/pdftron-proxy-server/locations/us-central1/functions/app"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-02-21T09:17:30Z","buildId":"81756c34-d784-4d0a-8d5b-4d368dd17e13","sourceToken":"a0ed3825-e787-4879-bbcd-7949e7dba194","buildName":"projects/90180485857/locations/us-central1/builds/81756c34-d784-4d0a-8d5b-4d368dd17e13"}}
+[debug] [2023-02-21T09:19:35.956Z] Got source token a0ed3825-e787-4879-bbcd-7949e7dba194 for region us-central1
+[debug] [2023-02-21T09:19:45.958Z] [create-default-us-central1-app] Retrying task index 0
+[debug] [2023-02-21T09:19:45.959Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw [none]
+[debug] [2023-02-21T09:19:46.537Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw 200
+[debug] [2023-02-21T09:19:46.537Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw {"name":"operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/pdftron-proxy-server/locations/us-central1/functions/app","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/pdftron-proxy-server/locations/us-central1/functions/app","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"app","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"90392da4719dca126e02752f5e8031379500baba"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-719005553171.us-central1.cloudfunctions.appspot.com/0bee9152-539d-4121-862b-c6dba42db455.zip?GoogleAccessId=service-90180485857@gcf-admin-robot.iam.gserviceaccount.com&Expires=1676972848&Signature=PgY%2Fd%2BrOTCGxLm1VafER1BfnqqBp6wPribMVPu0joPuB43MzesvvIZaMLXFpg5VTisfJxl0JWsDDA6LMQSgupVVMtU8IDwysNQtGgkiuScvsovomY23AIPj%2Flx45H96Je2FGcTyDRkmDt31g8slM9FmO0VWGiBOIr7YNM7OB2obw819DSgUnMWUNOMb0vA8moB4lyiNdmA9Pb4PNZVBX2hZFZcWy%2BKULhbxFggr5vtmc%2BMnldlqGZJK83kb9H0%2BhXMsR30fNeZupoJXjyi37zk7UzcXgWtwFCRhxJ5WzbZp1CE9jQG6GKVZylc1JTG9AMB%2BK4EevxZ%2FQDOiFme8P8g%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"pdftron-proxy-server\",\"storageBucket\":\"pdftron-proxy-server.appspot.com\"}","GCLOUD_PROJECT":"pdftron-proxy-server","EVENTARC_CLOUD_EVENT_SOURCE":"projects/pdftron-proxy-server/locations/us-central1/functions/app"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-02-21T09:17:30Z","buildId":"81756c34-d784-4d0a-8d5b-4d368dd17e13","sourceToken":"a0ed3825-e787-4879-bbcd-7949e7dba194","buildName":"projects/90180485857/locations/us-central1/builds/81756c34-d784-4d0a-8d5b-4d368dd17e13"}}
+[debug] [2023-02-21T09:19:46.537Z] Got source token a0ed3825-e787-4879-bbcd-7949e7dba194 for region us-central1
+[debug] [2023-02-21T09:19:56.539Z] [create-default-us-central1-app] Retrying task index 0
+[debug] [2023-02-21T09:19:56.539Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw [none]
+[debug] [2023-02-21T09:19:57.161Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw 200
+[debug] [2023-02-21T09:19:57.162Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw {"name":"operations/cGRmdHJvbi1wcm94eS1zZXJ2ZXIvdXMtY2VudHJhbDEvYXBwL2lsRWhQRHlOY2sw","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/pdftron-proxy-server/locations/us-central1/functions/app","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/pdftron-proxy-server/locations/us-central1/functions/app","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"app","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"90392da4719dca126e02752f5e8031379500baba"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-719005553171.us-central1.cloudfunctions.appspot.com/0bee9152-539d-4121-862b-c6dba42db455.zip?GoogleAccessId=service-90180485857@gcf-admin-robot.iam.gserviceaccount.com&Expires=1676972848&Signature=PgY%2Fd%2BrOTCGxLm1VafER1BfnqqBp6wPribMVPu0joPuB43MzesvvIZaMLXFpg5VTisfJxl0JWsDDA6LMQSgupVVMtU8IDwysNQtGgkiuScvsovomY23AIPj%2Flx45H96Je2FGcTyDRkmDt31g8slM9FmO0VWGiBOIr7YNM7OB2obw819DSgUnMWUNOMb0vA8moB4lyiNdmA9Pb4PNZVBX2hZFZcWy%2BKULhbxFggr5vtmc%2BMnldlqGZJK83kb9H0%2BhXMsR30fNeZupoJXjyi37zk7UzcXgWtwFCRhxJ5WzbZp1CE9jQG6GKVZylc1JTG9AMB%2BK4EevxZ%2FQDOiFme8P8g%3D%3D","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"pdftron-proxy-server\",\"storageBucket\":\"pdftron-proxy-server.appspot.com\"}","GCLOUD_PROJECT":"pdftron-proxy-server","EVENTARC_CLOUD_EVENT_SOURCE":"projects/pdftron-proxy-server/locations/us-central1/functions/app"},"runtime":"nodejs16","dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-02-21T09:19:55Z","buildId":"81756c34-d784-4d0a-8d5b-4d368dd17e13","sourceToken":"a0ed3825-e787-4879-bbcd-7949e7dba194","buildName":"projects/90180485857/locations/us-central1/builds/81756c34-d784-4d0a-8d5b-4d368dd17e13"},"done":true,"error":{"code":3,"message":"Function failed on loading user code. This is likely due to a bug in the user code. Error message: Error: please examine your function logs to see the error cause: https://cloud.google.com/functions/docs/monitoring/logging#viewing_logs. Additional troubleshooting documentation can be found at https://cloud.google.com/functions/docs/troubleshooting#logging. Please visit https://cloud.google.com/functions/docs/troubleshooting for in-depth troubleshooting documentation."}}
+[debug] [2023-02-21T09:19:57.162Z] Got source token a0ed3825-e787-4879-bbcd-7949e7dba194 for region us-central1
+[error] Function failed on loading user code. This is likely due to a bug in the user code. Error message: Error: please examine your function logs to see the error cause: https://cloud.google.com/functions/docs/monitoring/logging#viewing_logs. Additional troubleshooting documentation can be found at https://cloud.google.com/functions/docs/troubleshooting#logging. Please visit https://cloud.google.com/functions/docs/troubleshooting for in-depth troubleshooting documentation.
+[debug] [2023-02-21T09:19:57.167Z] Total Function Deployment time: 147659
+[debug] [2023-02-21T09:19:57.167Z] 1 Functions Deployed
+[debug] [2023-02-21T09:19:57.167Z] 1 Functions Errored
+[debug] [2023-02-21T09:19:57.167Z] 0 Function Deployments Aborted
+[debug] [2023-02-21T09:19:57.167Z] Average Function Deployment time: 147659
+[info] 
+[info] Functions deploy had errors with the following functions:
+	app(us-central1)
+[debug] [2023-02-21T09:19:57.643Z] Not printing URL for HTTPS function. Typically this means it didn't match a filter or we failed deployment
+[info] i  functions: cleaning up build files... 
+[debug] [2023-02-21T09:19:57.644Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/pdftron-proxy-server/locations/us-central1/repositories/gcf-artifacts/packages/app [none]
+[debug] [2023-02-21T09:19:57.645Z] >>> [apiv2][query] GET https://us.gcr.io/v2/pdftron-proxy-server/gcf/us-central1/tags/list [none]
+[debug] [2023-02-21T09:19:58.888Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/pdftron-proxy-server/locations/us-central1/repositories/gcf-artifacts/packages/app 200
+[debug] [2023-02-21T09:19:58.889Z] <<< [apiv2][body] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/pdftron-proxy-server/locations/us-central1/repositories/gcf-artifacts/packages/app {"name":"projects/pdftron-proxy-server/locations/us-central1/operations/46a3292f-ad10-4413-a94f-c3794c4f365b","metadata":{"@type":"type.googleapis.com/google.devtools.artifactregistry.v1beta2.OperationMetadata"}}
+[debug] [2023-02-21T09:19:58.889Z] >>> [apiv2][query] GET https://artifactregistry.googleapis.com/v1beta2/projects/pdftron-proxy-server/locations/us-central1/operations/46a3292f-ad10-4413-a94f-c3794c4f365b [none]
+[debug] [2023-02-21T09:19:59.981Z] <<< [apiv2][status] GET https://artifactregistry.googleapis.com/v1beta2/projects/pdftron-proxy-server/locations/us-central1/operations/46a3292f-ad10-4413-a94f-c3794c4f365b 200
+[debug] [2023-02-21T09:19:59.981Z] <<< [apiv2][body] GET https://artifactregistry.googleapis.com/v1beta2/projects/pdftron-proxy-server/locations/us-central1/operations/46a3292f-ad10-4413-a94f-c3794c4f365b {"name":"projects/pdftron-proxy-server/locations/us-central1/operations/46a3292f-ad10-4413-a94f-c3794c4f365b","metadata":{"@type":"type.googleapis.com/google.devtools.artifactregistry.v1beta2.OperationMetadata"},"done":true,"response":{"@type":"type.googleapis.com/google.protobuf.Empty"}}
+[debug] [2023-02-21T09:20:00.125Z] <<< [apiv2][status] GET https://us.gcr.io/v2/pdftron-proxy-server/gcf/us-central1/tags/list 200
+[debug] [2023-02-21T09:20:00.125Z] <<< [apiv2][body] GET https://us.gcr.io/v2/pdftron-proxy-server/gcf/us-central1/tags/list {"child":[],"manifest":{},"name":"pdftron-proxy-server/gcf/us-central1","tags":[]}
+[debug] [2023-02-21T09:20:00.125Z] Could not find image for function projects/pdftron-proxy-server/locations/us-central1/functions/app
+[debug] [2023-02-21T09:20:00.125Z] Functions deploy failed.
+[debug] [2023-02-21T09:20:00.125Z] {
+  "endpoint": {
+    "id": "app",
+    "project": "pdftron-proxy-server",
+    "region": "us-central1",
+    "entryPoint": "app",
+    "platform": "gcfv1",
+    "runtime": "nodejs16",
+    "httpsTrigger": {},
+    "serviceAccount": null,
+    "ingressSettings": null,
+    "availableMemoryMb": null,
+    "timeoutSeconds": null,
+    "maxInstances": null,
+    "minInstances": null,
+    "vpc": null,
+    "environmentVariables": {
+      "FIREBASE_CONFIG": "{\"projectId\":\"pdftron-proxy-server\",\"storageBucket\":\"pdftron-proxy-server.appspot.com\"}",
+      "GCLOUD_PROJECT": "pdftron-proxy-server",
+      "EVENTARC_CLOUD_EVENT_SOURCE": "projects/pdftron-proxy-server/locations/us-central1/functions/app"
+    },
+    "codebase": "default",
+    "targetedByOnly": false,
+    "hash": "90392da4719dca126e02752f5e8031379500baba",
+    "labels": {
+      "deployment-tool": "cli-firebase"
+    }
+  },
+  "op": "create",
+  "original": {
+    "name": "FirebaseError",
+    "children": [],
+    "exit": 1,
+    "message": "Function failed on loading user code. This is likely due to a bug in the user code. Error message: Error: please examine your function logs to see the error cause: https://cloud.google.com/functions/docs/monitoring/logging#viewing_logs. Additional troubleshooting documentation can be found at https://cloud.google.com/functions/docs/troubleshooting#logging. Please visit https://cloud.google.com/functions/docs/troubleshooting for in-depth troubleshooting documentation.",
+    "status": 3
+  }
+}
+[debug] [2023-02-21T09:20:00.528Z] Error: Failed to create function app in region us-central1
+    at /usr/local/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:48:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Fabricator.createV1Function (/usr/local/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:177:32)
+    at async Fabricator.createEndpoint (/usr/local/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:129:13)
+    at async handle (/usr/local/lib/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:85:17)
+[error] 
+[error] Error: There was an error deploying functions
