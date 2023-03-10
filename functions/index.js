@@ -14,10 +14,10 @@ const whitelist = [
   "https://sheldon-326500.ew.r.appspot.com",
 ];
 
-const runtimeOpts = {
-  timeoutSeconds: 500,
-  memory: "2GB",
-};
+// const runtimeOpts = {
+//   timeoutSeconds: 500,
+//   memory: "2GB",
+// };
 
 const OPTIONS = {
   SERVER_ROOT: host,
@@ -27,7 +27,7 @@ const OPTIONS = {
   ALLOW_HTTP_PROXY: false,
 };
 
-exports.app = functions.runWith(runtimeOpts).https.onRequest(HTMLProxyServer.createServer(OPTIONS));
+// exports.app = functions.runWith(runtimeOpts).https.onRequest(HTMLProxyServer.createServer(OPTIONS));
 
 
-
+HTMLProxyServer.createServer(OPTIONS);
