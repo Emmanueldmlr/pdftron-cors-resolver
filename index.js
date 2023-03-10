@@ -15,7 +15,7 @@ const whitelist = [
 
 const OPTIONS = {
   SERVER_ROOT: host,
-  PORT: 3000,
+  PORT: port,
   CORS_OPTIONS: { origin: whitelist, credentials: true },
   COOKIE_SETTING: { sameSite: 'none', secure: true },
   ALLOW_HTTP_PROXY: false,
