@@ -18,7 +18,7 @@ const OPTIONS = {
   PORT: port,
   CORS_OPTIONS: { origin: whitelist, credentials: true },
   COOKIE_SETTING: { sameSite: 'none', secure: true },
-  ALLOW_HTTP_PROXY: false,
+  ALLOW_HTTP_PROXY: true,
 };
 
 HTMLProxyServer.createServer(OPTIONS);
