@@ -16,6 +16,7 @@ const whitelist = [
   "https://sheldon-326500.ew.r.appspot.com",
   "https://pdftron-proxy-server.web.app",
   "https://mosaiqlabs.web.app",
+  "https://mosaiq-dev.web.app"
 ];
 
 // const runtimeOpts = {

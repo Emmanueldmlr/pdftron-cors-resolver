@@ -11,6 +11,7 @@ const whitelist = [
   "https://mosaiqlabsdemo.netlify.app",
   "https://sheldon-326500.ew.r.appspot.com",
   "https://mosaiqlabs.web.app",
+  "https://mosaiq-dev.web.app"
 ];
 
 const OPTIONS = {
