@@ -15,6 +15,7 @@ const whitelist = [
   "https://mosaiqlabsdemo.netlify.app",
   "https://sheldon-326500.ew.r.appspot.com",
   "https://pdftron-proxy-server.web.app",
+  "https://mosaiqlabs.web.app",
 ];
 
 // const runtimeOpts = {
