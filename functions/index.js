@@ -6,7 +6,7 @@ const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
 // const host = "https://us-central1-pdftron-proxy-server.cloudfunctions.net/app";
-const host = "https://pdf-tron.herokuapp.com";
+const host = "https://pdftron-server.herokuapp.com";
 
 const port = process.env.PORT || 3000;
 
